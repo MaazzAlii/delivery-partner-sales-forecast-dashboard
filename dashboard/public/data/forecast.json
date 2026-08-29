@@ -1,0 +1,194 @@
+{
+  "disclaimer": "SYNTHETIC DATA \u2014 Generated for educational and portfolio purposes as part of the SafeX Solutions Internship (Week 4, Group 56). Not actual Careem financial data.",
+  "forecast": [
+    {
+      "month": "2024-09",
+      "actualOrders": 1248,
+      "predictedOrders": 1257.84,
+      "actualRevenue": 1105403.52,
+      "predictedRevenue": 1098315.0
+    },
+    {
+      "month": "2024-10",
+      "actualOrders": 1395,
+      "predictedOrders": 1401.8,
+      "actualRevenue": 1255234.95,
+      "predictedRevenue": 1254578.96
+    },
+    {
+      "month": "2024-11",
+      "actualOrders": 1476,
+      "predictedOrders": 1457.72,
+      "actualRevenue": 1302643.8,
+      "predictedRevenue": 1303635.01
+    },
+    {
+      "month": "2024-12",
+      "actualOrders": 1452,
+      "predictedOrders": 1462.52,
+      "actualRevenue": 1253889.12,
+      "predictedRevenue": 1292005.01
+    },
+    {
+      "month": "2025-01",
+      "actualOrders": 1726,
+      "predictedOrders": 1717.71,
+      "actualRevenue": 1512959.82,
+      "predictedRevenue": 1531534.65
+    },
+    {
+      "month": "2025-02",
+      "actualOrders": 1607,
+      "predictedOrders": 1596.38,
+      "actualRevenue": 1461373.66,
+      "predictedRevenue": 1403635.31
+    },
+    {
+      "month": "2025-03",
+      "actualOrders": 1618,
+      "predictedOrders": 1618.0,
+      "actualRevenue": 1506325.64,
+      "predictedRevenue": 1506325.64
+    },
+    {
+      "month": "2025-04",
+      "actualOrders": 1400,
+      "predictedOrders": 1464.11,
+      "actualRevenue": 1319010.0,
+      "predictedRevenue": 1356587.38
+    },
+    {
+      "month": "2025-05",
+      "actualOrders": 1451,
+      "predictedOrders": 1415.95,
+      "actualRevenue": 1326199.49,
+      "predictedRevenue": 1314427.62
+    },
+    {
+      "month": "2025-06",
+      "actualOrders": 1510,
+      "predictedOrders": 1463.73,
+      "actualRevenue": 1420487.2,
+      "predictedRevenue": 1378676.31
+    },
+    {
+      "month": "2025-07",
+      "actualOrders": 1529,
+      "predictedOrders": 1521.3,
+      "actualRevenue": 1403652.58,
+      "predictedRevenue": 1385728.95
+    },
+    {
+      "month": "2025-08",
+      "actualOrders": 1601,
+      "predictedOrders": 1621.7,
+      "actualRevenue": 1474392.92,
+      "predictedRevenue": 1531441.35
+    },
+    {
+      "month": "2025-09",
+      "actualOrders": 1505,
+      "predictedOrders": 1520.33,
+      "actualRevenue": 1456644.35,
+      "predictedRevenue": 1476046.11
+    },
+    {
+      "month": "2025-10",
+      "actualOrders": 1714,
+      "predictedOrders": 1763.49,
+      "actualRevenue": 1723958.34,
+      "predictedRevenue": 1720115.94
+    },
+    {
+      "month": "2025-11",
+      "actualOrders": 1891,
+      "predictedOrders": 1821.6,
+      "actualRevenue": 1845370.17,
+      "predictedRevenue": 1789264.7
+    },
+    {
+      "month": "2025-12",
+      "actualOrders": 1888,
+      "predictedOrders": 1880.79,
+      "actualRevenue": 1834286.4,
+      "predictedRevenue": 1819718.17
+    },
+    {
+      "month": "2026-01",
+      "actualOrders": 2038,
+      "predictedOrders": 2046.34,
+      "actualRevenue": 1970256.88,
+      "predictedRevenue": 1967803.01
+    },
+    {
+      "month": "2026-02",
+      "actualOrders": 1933,
+      "predictedOrders": 1950.7,
+      "actualRevenue": 1850654.2,
+      "predictedRevenue": 1892903.93
+    },
+    {
+      "month": "2026-03",
+      "actualOrders": 2126,
+      "predictedOrders": 2069.34,
+      "actualRevenue": 2126425.2,
+      "predictedRevenue": 2063307.42
+    },
+    {
+      "month": "2026-04",
+      "actualOrders": 1772,
+      "predictedOrders": 1811.86,
+      "actualRevenue": 1780417.0,
+      "predictedRevenue": 1785577.88
+    },
+    {
+      "month": "2026-05",
+      "actualOrders": 1847,
+      "predictedOrders": 1810.71,
+      "actualRevenue": 1885731.59,
+      "predictedRevenue": 1809233.22
+    },
+    {
+      "month": "2026-06",
+      "actualOrders": 1659,
+      "predictedOrders": 1728.4,
+      "actualRevenue": 1633235.73,
+      "predictedRevenue": 1776500.12
+    },
+    {
+      "month": "2026-07",
+      "actualOrders": 1945,
+      "predictedOrders": 1932.2,
+      "actualRevenue": 1909367.6,
+      "predictedRevenue": 1937173.74
+    },
+    {
+      "month": "2026-08",
+      "actualOrders": 1870,
+      "predictedOrders": 1959.89,
+      "actualRevenue": 1930064.4,
+      "predictedRevenue": 1964070.78
+    },
+    {
+      "month": "2026-09",
+      "actualOrders": null,
+      "predictedOrders": 1926.84,
+      "actualRevenue": null,
+      "predictedRevenue": 1987305.5
+    },
+    {
+      "month": "2026-10",
+      "actualOrders": null,
+      "predictedOrders": 2014.22,
+      "actualRevenue": null,
+      "predictedRevenue": 2081393.27
+    },
+    {
+      "month": "2026-11",
+      "actualOrders": null,
+      "predictedOrders": 2136.28,
+      "actualRevenue": null,
+      "predictedRevenue": 2188986.57
+    }
+  ]
+}

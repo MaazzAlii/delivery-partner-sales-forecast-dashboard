@@ -1,0 +1,15 @@
+{
+  "disclaimer": "SYNTHETIC DATA \u2014 Generated for educational and portfolio purposes as part of the SafeX Solutions Internship (Week 4, Group 56). Not actual Careem financial data.",
+  "latestMonth": "2026-08",
+  "latestActualOrders": 1870,
+  "latestActualRevenue": 1930064.4,
+  "momGrowthPct": -3.86,
+  "nextMonth": "2026-09",
+  "nextMonthForecastOrders": 1926.84,
+  "nextMonthForecastRevenue": 1987305.5,
+  "championModel": "Multiple Linear Regression",
+  "orderMapePct": 2.75,
+  "revenueMapePct": 3.22,
+  "totalHistoricalMonths": 24,
+  "totalForecastMonths": 3
+}

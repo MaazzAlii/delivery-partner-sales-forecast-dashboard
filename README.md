@@ -1,18 +1,19 @@
-# Careem NOW Partner Analytics — Predictive Sales & Demand Dashboard
+# Delivery Partner Sales Forecast — Case Study
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-indigo.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
 [![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python)](https://python.org)
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Demo-00B14F?logo=vercel)](https://delivery-partner-sales-forecast-dashboard.vercel.app)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Demo-6366F1?logo=vercel)](https://delivery-partner-sales-forecast-dashboard.vercel.app)
 
-> **SYNTHETIC DATA DISCLAIMER**  
-> All figures, order volumes, revenue metrics, and operational projections in this repository are **100% synthetic and simulated** for educational demonstration as part of the **SafeX Solutions Internship Program** (Week 4 Deliverable, Group 56, AI & ML Department). They do not represent real Careem NOW corporate or merchant financial data.
+> **SYNTHETIC DATA & NON-AFFILIATION DISCLAIMER**  
+> All figures, order volumes, revenue metrics, and operational projections in this repository are **100% synthetic and simulated** for educational demonstration as part of the **SafeX Solutions Internship Program** (Week 4 Deliverable, Group 56, AI & ML Department).  
+> *This is an independent student project analyzing a hypothetical delivery-partner business; it is not affiliated with, endorsed by, or produced in partnership with Careem.*
 
 ---
 
 ## 📌 Executive Summary
 
-This repository delivers an end-to-end predictive demand forecasting solution designed for independent restaurant partners operating on food delivery platforms like Careem NOW in the Rawalpindi / Islamabad region. 
+This repository delivers an end-to-end predictive demand forecasting case study designed for independent restaurant partners operating on food delivery platforms in the Rawalpindi / Islamabad region. 
 
 The project evaluates both a baseline **Simple Moving Average (SMA-6)** model and a feature-engineered **Multiple Linear Regression** champion model, which achieves a **2.75% MAPE** (~51 orders/month average variance) compared to **7.96% MAPE** (~148 orders/month variance) for the baseline model (a **65.5% error reduction**).
 
@@ -31,8 +32,8 @@ The project evaluates both a baseline **Simple Moving Average (SMA-6)** model an
 1. **Overview / Home (`/`):** 4 primary KPI cards (Latest Orders, MoM Growth %, Next-Month Forecast, Model Accuracy Benchmark) + 9-month demand trend preview chart.
 2. **Sales & Demand Forecast (`/forecast`):** Interactive Recharts dual-series line chart comparing historical actuals vs predicted values across all 27 months, featuring a toggle between Order Volume and Revenue (PKR).
 3. **Data Explorer (`/data`):** Sortable, searchable table of all 27 dataset records with client-side CSV export functionality (`exportToCSV`).
-4. **Strategic Recommendations (`/recommendations`):** 3 actionable business strategies (Inventory acquisition, kitchen shift scheduling, Careem promo timing) tied directly to forecast numbers.
-5. **Methodology & About (`/about`):** Plain-language breakdown of dataset parameters, algorithm evaluations, model limitations, and project credits.
+4. **Strategic Recommendations (`/recommendations`):** 3 actionable business strategies (Inventory acquisition, kitchen shift scheduling, platform promo timing) tied directly to forecast numbers.
+5. **Methodology & About (`/about`):** Plain-language breakdown of dataset parameters, algorithm evaluations, model limitations, non-affiliation notice, and project credits.
 6. **Internal Outreach Tracker (`/internal/outreach`):** Unlinked private evidence log for internship grading.
 
 ---

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
-import { Download, Search, ArrowUpDown, Calendar, Table as TableIcon } from "lucide-react";
+import { Download, Search, ArrowUpDown, Calendar } from "lucide-react";
 
 interface ForecastRecord {
   month: string;
@@ -86,7 +86,7 @@ export default function DataExplorerPage() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "careem_partner_forecast_data.csv");
+    link.setAttribute("download", "delivery_partner_forecast_data.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -96,7 +96,7 @@ export default function DataExplorerPage() {
     return (
       <div className="flex items-center justify-center min-h-[400px] text-slate-400">
         <div className="animate-pulse flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-sm font-medium">Loading dataset table...</p>
         </div>
       </div>
@@ -121,7 +121,7 @@ export default function DataExplorerPage() {
 
         <button
           onClick={exportCSV}
-          className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 transition-all self-start sm:self-auto"
+          className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-indigo-500/20 transition-all self-start sm:self-auto"
         >
           <Download className="w-4 h-4" />
           <span>Export Dataset to CSV</span>
@@ -137,7 +137,7 @@ export default function DataExplorerPage() {
             placeholder="Filter by month (e.g. 2025-03)..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-9 pr-4 py-2 text-xs text-slate-200 focus:outline-none focus:border-emerald-500 transition-colors"
+            className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-9 pr-4 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-500 transition-colors"
           />
         </div>
 
@@ -147,7 +147,7 @@ export default function DataExplorerPage() {
             onClick={() => handleSort("month")}
             className={`px-3 py-1.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-colors ${
               sortField === "month"
-                ? "bg-slate-800 border-emerald-500/40 text-emerald-400"
+                ? "bg-slate-800 border-indigo-500/40 text-indigo-400"
                 : "border-slate-800 hover:bg-slate-800/50 text-slate-300"
             }`}
           >
@@ -157,7 +157,7 @@ export default function DataExplorerPage() {
             onClick={() => handleSort("actualOrders")}
             className={`px-3 py-1.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-colors ${
               sortField === "actualOrders"
-                ? "bg-slate-800 border-emerald-500/40 text-emerald-400"
+                ? "bg-slate-800 border-indigo-500/40 text-indigo-400"
                 : "border-slate-800 hover:bg-slate-800/50 text-slate-300"
             }`}
           >
@@ -187,17 +187,17 @@ export default function DataExplorerPage() {
                   <tr
                     key={row.month}
                     className={`transition-colors hover:bg-slate-800/40 ${
-                      isFuture ? "bg-emerald-950/20" : ""
+                      isFuture ? "bg-indigo-950/20" : ""
                     }`}
                   >
                     <td className="py-3.5 px-4 font-medium text-slate-200 flex items-center gap-2">
-                      <Calendar className={`w-4 h-4 ${isFuture ? "text-emerald-400" : "text-slate-500"}`} />
+                      <Calendar className={`w-4 h-4 ${isFuture ? "text-indigo-400" : "text-slate-500"}`} />
                       {row.month}
                     </td>
                     <td className="py-3.5 px-4 text-right font-semibold text-slate-200">
                       {row.actualOrders !== null ? row.actualOrders.toLocaleString() : "—"}
                     </td>
-                    <td className="py-3.5 px-4 text-right font-bold text-emerald-400">
+                    <td className="py-3.5 px-4 text-right font-bold text-indigo-400">
                       {row.predictedOrders !== null ? Math.round(row.predictedOrders).toLocaleString() : "—"}
                     </td>
                     <td className="py-3.5 px-4 text-right text-slate-300 font-mono text-xs">
@@ -208,7 +208,7 @@ export default function DataExplorerPage() {
                     </td>
                     <td className="py-3.5 px-4 text-center">
                       {isFuture ? (
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
                           Forecast
                         </span>
                       ) : (

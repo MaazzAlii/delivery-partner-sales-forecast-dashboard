@@ -1,5 +1,5 @@
 {
-  "disclaimer": "SYNTHETIC DATA — Educational portfolio project for SafeX Solutions Internship (Week 4, Group 56). Not real Careem data.",
+  "disclaimer": "SYNTHETIC DATA — Independent student project analyzing a hypothetical delivery-partner business for SafeX Solutions Internship (Week 4, Group 56). Not affiliated with or endorsed by Careem.",
   "recommendations": [
     {
       "id": "rec-1",
@@ -27,13 +27,13 @@
     },
     {
       "id": "rec-3",
-      "category": "Marketing & Careem Promo Timing",
+      "category": "Marketing & Platform Promo Timing",
       "title": "Targeted Off-Peak & Rainy-Day Marketing Promotions",
       "targetMetric": "September 2026 Transition: 1,927 Orders",
       "rationale": "September represents a post-monsoon transition period with lower organic volume (1,927 orders). Regression coefficients show that active promo days (+11.75 orders/day) and rainy weather (+21.32 orders/day) significantly boost delivery demand.",
       "actionItems": [
-        "Schedule 8 targeted Careem NOW banner promotions during September weekday afternoons (2:00 PM – 5:00 PM).",
-        "Co-fund automated Careem 'Rainy Day Free Delivery' campaigns during monsoon showers in Islamabad/Rawalpindi.",
+        "Schedule 8 targeted delivery platform banner promotions during September weekday afternoons (2:00 PM – 5:00 PM).",
+        "Co-fund automated 'Rainy Day Free Delivery' campaigns during monsoon showers in Islamabad/Rawalpindi.",
         "Analyze customer re-order rates following promo redemptions to optimize marketing ROI."
       ]
     }

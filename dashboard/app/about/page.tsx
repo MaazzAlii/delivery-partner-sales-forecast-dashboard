@@ -9,6 +9,7 @@ import {
   Award,
   Database,
   ExternalLink,
+  ShieldAlert,
 } from "lucide-react";
 
 export default function MethodologyPage() {
@@ -17,10 +18,21 @@ export default function MethodologyPage() {
       {/* Disclaimer Banner */}
       <DisclaimerBanner />
 
+      {/* Explicit Brand Non-Affiliation Box */}
+      <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-2 text-xs text-slate-300">
+        <div className="flex items-center gap-2 font-bold text-amber-400 text-sm">
+          <ShieldAlert className="w-4 h-4" />
+          <span>Independent Student Project Notice</span>
+        </div>
+        <p className="leading-relaxed font-medium text-slate-200">
+          This is an independent student project analyzing a hypothetical delivery-partner business; it is not affiliated with, endorsed by, or produced in partnership with Careem.
+        </p>
+      </div>
+
       {/* Header */}
       <div className="border-b border-slate-800 pb-5">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 tracking-tight flex items-center gap-3">
-          <BookOpen className="w-7 h-7 text-emerald-400" />
+          <BookOpen className="w-7 h-7 text-indigo-400" />
           Methodology & Project Specifications
         </h2>
         <p className="text-sm text-slate-400 mt-1">
@@ -32,17 +44,17 @@ export default function MethodologyPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Card 1: Data Architecture & Disclaimer */}
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-6 space-y-4 shadow-lg">
-          <div className="flex items-center gap-2 text-emerald-400 font-bold text-base border-b border-slate-800 pb-3">
+          <div className="flex items-center gap-2 text-indigo-400 font-bold text-base border-b border-slate-800 pb-3">
             <Database className="w-5 h-5" />
             <span>Dataset Simulation & Architecture</span>
           </div>
           <p className="text-sm text-slate-300 leading-relaxed">
-            This predictive dashboard relies on a 24-month synthetic dataset (Sept 2024 – Aug 2026) simulating monthly order volume, revenue (PKR), active promotion days, rainy weather days, and Ramadan flags for an independent restaurant operating on Careem NOW in the Rawalpindi/Islamabad region.
+            This predictive dashboard relies on a 24-month synthetic dataset (Sept 2024 – Aug 2026) simulating monthly order volume, revenue (PKR), active promotion days, rainy weather days, and Ramadan flags for an independent restaurant operating via a delivery platform in the Rawalpindi/Islamabad region.
           </p>
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2 text-xs text-slate-400">
             <h4 className="font-bold text-slate-200 uppercase tracking-wider">Key Data Parameters</h4>
             <ul className="list-disc pl-4 space-y-1">
-              <li>Random Seed: <code className="text-emerald-400">42</code> (100% reproducible)</li>
+              <li>Random Seed: <code className="text-indigo-400">42</code> (100% reproducible)</li>
               <li>Underlying Growth Trend: +22 orders / month</li>
               <li>Winter Demand Elevation: +14% (Nov–Feb)</li>
               <li>Ramadan Order Surge: +18% (March 2025 & March 2026)</li>
@@ -65,7 +77,7 @@ export default function MethodologyPage() {
               </p>
             </div>
             <div className="bg-slate-950 p-3.5 rounded-lg border border-slate-800">
-              <h4 className="font-bold text-emerald-400 text-sm mb-1">Multiple Linear Regression (Champion)</h4>
+              <h4 className="font-bold text-indigo-400 text-sm mb-1">Multiple Linear Regression (Champion)</h4>
               <p className="leading-relaxed">
                 Learns mathematical relationships between order volume and specific operational drivers — including time index, calendar month sine/cosine seasonality, active marketing promo days, rainy days, and Ramadan calendar flags.
               </p>
@@ -90,10 +102,10 @@ export default function MethodologyPage() {
             <div className="text-2xl font-black text-rose-400">7.96% MAPE</div>
             <p className="text-[11px] text-slate-500">Average error ~148 orders / mo</p>
           </div>
-          <div className="bg-emerald-950/20 p-4 rounded-xl border border-emerald-500/30 text-center space-y-1">
-            <span className="text-xs text-emerald-400 uppercase tracking-wider">Champion Regression Error</span>
-            <div className="text-2xl font-black text-emerald-400">2.75% MAPE</div>
-            <p className="text-[11px] text-emerald-300/80">Average error ~51 orders / mo</p>
+          <div className="bg-indigo-950/20 p-4 rounded-xl border border-indigo-500/30 text-center space-y-1">
+            <span className="text-xs text-indigo-400 uppercase tracking-wider">Champion Regression Error</span>
+            <div className="text-2xl font-black text-indigo-400">2.75% MAPE</div>
+            <p className="text-[11px] text-indigo-300/80">Average error ~51 orders / mo</p>
           </div>
         </div>
       </div>
@@ -120,14 +132,14 @@ export default function MethodologyPage() {
         </div>
 
         {/* Project Credits */}
-        <div className="bg-gradient-to-br from-slate-900 to-emerald-950/40 border border-emerald-500/30 rounded-xl p-6 space-y-4 flex flex-col justify-between">
+        <div className="bg-gradient-to-br from-slate-900 to-indigo-950/40 border border-indigo-500/30 rounded-xl p-6 space-y-4 flex flex-col justify-between">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+            <div className="flex items-center gap-2 text-indigo-400 font-bold text-sm">
               <Award className="w-5 h-5" />
               <span>Project Credits & Internship Context</span>
             </div>
             <p className="text-sm font-semibold text-slate-100">
-              CaremEats Partner Analytics — Predictive Dashboard
+              Delivery Partner Sales Forecast — Case Study
             </p>
             <p className="text-xs text-slate-300 leading-relaxed">
               Developed by <strong>Maaz Ali</strong> as part of the <strong>SafeX Solutions Internship Program</strong> (Week 4 Deliverable, AI & ML Department, Group 56).
@@ -140,7 +152,7 @@ export default function MethodologyPage() {
               href="https://github.com/MaazzAlii/delivery-partner-sales-forecast-dashboard"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-emerald-400 hover:underline font-semibold"
+              className="inline-flex items-center gap-1 text-indigo-400 hover:underline font-semibold"
             >
               <span>GitHub Code Repository</span>
               <ExternalLink className="w-3.5 h-3.5" />

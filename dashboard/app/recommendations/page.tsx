@@ -33,26 +33,24 @@ export default function RecommendationsPage() {
     async function loadData() {
       try {
         const res = await fetch("/content/recommendations.json");
-        // Fallback fetch from public path if content is bundled
         const json = await res.json();
         setData(json);
       } catch (err) {
-        // Fallback inline data if static fetch fails
         setData({
           disclaimer:
-            "SYNTHETIC DATA — Educational portfolio project for SafeX Solutions Internship (Week 4, Group 56). Not real Careem data.",
+            "SYNTHETIC DATA — Independent student project analyzing a hypothetical delivery-partner business for SafeX Solutions Internship (Week 4, Group 56). Not affiliated with Careem.",
           recommendations: [
             {
               id: "rec-1",
               category: "Inventory & Supply Chain",
-              title: "Pre-Winter Bulk Inventory Acquisition",
-              targetMetric: "November 2026 Forecast: 2,136 Orders (+10.6% MoM)",
+              title: "Pre-Winter Bulk Inventory & Packaging Procurement",
+              targetMetric: "November 2026 Forecast: 2,136 Orders (+10.8% Growth)",
               rationale:
-                "Our regression model forecasts demand ramping aggressively from 1,927 orders in September to 2,136 orders in November (+10.6% MoM growth) as winter comfort dining takes effect across Rawalpindi and Islamabad. Purchasing perishable ingredients and branded delivery packaging on a spot basis in November risks stockouts and inflated emergency procurement costs.",
+                "Monthly order volume is projected to ramp from 1,927 orders in September to 2,136 orders in November 2026 (+10.8% growth / +209 orders/month) as winter demand takes effect across Rawalpindi and Islamabad. Spot purchasing packaging in November risks stockouts and emergency procurement costs.",
               actionItems: [
-                "Negotiate bulk supply contracts for packaging and dry spices by October 15 to lock in 5-8% volume discounts.",
-                "Maintain a 4-day safety stock buffer of high-volume menu items starting November 1.",
-                "Establish backup local suppliers for fresh produce to prevent delivery cancellations during peak winter demand surges.",
+                "Negotiate bulk supply contracts for eco-friendly packaging and dry spices by October 15 to lock in 5-8% volume discounts.",
+                "Establish a mandatory 4-day safety stock buffer of high-demand packaging items starting November 1.",
+                "Set up backup local produce suppliers to prevent delivery cancellations during peak winter demand surges.",
               ],
             },
             {
@@ -61,23 +59,23 @@ export default function RecommendationsPage() {
               title: "Optimized Shift Scheduling for Peak Weekend Demand",
               targetMetric: "October & November Forecast: >2,000 Orders / Month",
               rationale:
-                "With monthly demand crossing 2,000 orders in October (2,014 projected) and 2,136 in November, kitchen bottlenecking during peak dinner windows (7:00 PM – 10:00 PM) will increase order prep times if staffing remains at summer levels.",
+                "Monthly order volume is forecast to break the 2,000 orders/month threshold in October (2,014 orders) and reach 2,136 orders in November, increasing kitchen dispatch pressure during weekend peak hours (7:00 PM – 10:00 PM).",
               actionItems: [
-                "Add 2 part-time prep cooks for Friday through Sunday evening shifts starting October 1.",
-                "Cross-train packaging staff on kitchen dispatch procedures to maintain under-20-minute prep SLAs.",
+                "Add 2 part-time prep cooks for Friday through Sunday dinner shifts starting October 1.",
+                "Cross-train front-of-house packaging staff on kitchen dispatch procedures to keep prep SLAs strictly under 20 minutes.",
                 "Streamline high-margin combo meals to accelerate kitchen throughput during peak order bursts.",
               ],
             },
             {
               id: "rec-3",
-              category: "Marketing & Careem Promo Timing",
-              title: "Targeted Rainy-Day & Off-Peak Promo Campaigns",
+              category: "Marketing & Platform Promo Timing",
+              title: "Targeted Off-Peak & Rainy-Day Marketing Promotions",
               targetMetric: "September 2026 Transition: 1,927 Orders",
               rationale:
-                "September represents a post-monsoon transition period with lower organic volume (1,927 orders) before the winter surge. Regression analysis reveals that active promo days (+11.75 orders/day) and rainy weather (+21.32 orders/day) significantly boost delivery demand.",
+                "September represents a post-monsoon transition period with lower organic volume (1,927 orders). Regression coefficients show that active promo days (+11.75 orders/day) and rainy weather (+21.32 orders/day) significantly boost delivery demand.",
               actionItems: [
-                "Schedule 8 targeted Careem NOW banner promotions during September weekday afternoons.",
-                "Activate automated Careem 'Rainy Day Free Delivery' co-funded campaigns when monsoon showers occur in Islamabad/Rawalpindi.",
+                "Schedule 8 targeted delivery platform banner promotions during September weekday afternoons (2:00 PM – 5:00 PM).",
+                "Co-fund automated 'Rainy Day Free Delivery' campaigns during monsoon showers in Islamabad/Rawalpindi.",
                 "Analyze customer re-order rates following promo redemptions to optimize marketing ROI.",
               ],
             },
@@ -93,14 +91,14 @@ export default function RecommendationsPage() {
   const getCategoryIcon = (category: string) => {
     if (category.includes("Inventory")) return <Boxes className="w-5 h-5 text-amber-400" />;
     if (category.includes("Staffing") || category.includes("Operations")) return <Users className="w-5 h-5 text-blue-400" />;
-    return <Megaphone className="w-5 h-5 text-emerald-400" />;
+    return <Megaphone className="w-5 h-5 text-indigo-400" />;
   };
 
   if (loading || !data) {
     return (
       <div className="flex items-center justify-center min-h-[400px] text-slate-400">
         <div className="animate-pulse flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-sm font-medium">Loading recommendations...</p>
         </div>
       </div>
@@ -144,8 +142,8 @@ export default function RecommendationsPage() {
                 </div>
               </div>
 
-              <div className="self-start sm:self-auto bg-slate-950 border border-emerald-500/30 px-3 py-1.5 rounded-lg text-xs font-medium text-emerald-400 flex items-center gap-1.5">
-                <TrendingUp className="w-4 h-4 text-emerald-400" />
+              <div className="self-start sm:self-auto bg-slate-950 border border-indigo-500/30 px-3 py-1.5 rounded-lg text-xs font-medium text-indigo-400 flex items-center gap-1.5">
+                <TrendingUp className="w-4 h-4 text-indigo-400" />
                 <span>{rec.targetMetric}</span>
               </div>
             </div>
@@ -171,7 +169,7 @@ export default function RecommendationsPage() {
                     key={itemIdx}
                     className="flex items-start gap-3 bg-slate-950/40 p-3 rounded-lg border border-slate-800/40 text-xs text-slate-200"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </div>
                 ))}

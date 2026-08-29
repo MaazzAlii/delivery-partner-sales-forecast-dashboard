@@ -61,7 +61,7 @@ export default function ForecastPage() {
     return (
       <div className="flex items-center justify-center min-h-[400px] text-slate-400">
         <div className="animate-pulse flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-sm font-medium">Loading forecast visualization...</p>
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function ForecastPage() {
             onClick={() => setMetric("orders")}
             className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
               metric === "orders"
-                ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20"
+                ? "bg-indigo-500 text-white shadow-md shadow-indigo-500/20"
                 : "text-slate-400 hover:text-slate-200"
             }`}
           >
@@ -110,7 +110,7 @@ export default function ForecastPage() {
             onClick={() => setMetric("revenue")}
             className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
               metric === "revenue"
-                ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20"
+                ? "bg-indigo-500 text-white shadow-md shadow-indigo-500/20"
                 : "text-slate-400 hover:text-slate-200"
             }`}
           >
@@ -123,14 +123,14 @@ export default function ForecastPage() {
       <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-6 space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-sm font-semibold text-slate-200">
-            <BarChart3 className="w-5 h-5 text-emerald-400" />
+            <BarChart3 className="w-5 h-5 text-indigo-400" />
             <span>
               {metric === "orders" ? "Monthly Orders (Actual vs Model)" : "Monthly Revenue in Millions PKR (Actual vs Model)"}
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs font-medium">
             <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-emerald-500"></span>
+              <span className="w-3 h-3 rounded-full bg-indigo-500"></span>
               <span className="text-slate-300">Actual Historical</span>
             </div>
             <div className="flex items-center gap-2">
@@ -167,15 +167,15 @@ export default function ForecastPage() {
                 x1="2026-09"
                 x2="2026-11"
                 strokeOpacity={0.3}
-                fill="#00B14F"
+                fill="#6366F1"
                 fillOpacity={0.08}
               />
               <Line
                 type="monotone"
                 dataKey="Actual"
-                stroke="#00B14F"
+                stroke="#6366F1"
                 strokeWidth={3}
-                dot={{ fill: "#00B14F", r: 4 }}
+                dot={{ fill: "#6366F1", r: 4 }}
                 activeDot={{ r: 6 }}
                 connectNulls={false}
               />
@@ -199,7 +199,7 @@ export default function ForecastPage() {
         <div className="lg:col-span-2 bg-slate-900/90 border border-slate-800 rounded-xl p-6 space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-emerald-400" />
+              <Sparkles className="w-5 h-5 text-indigo-400" />
               3-Month Forward Projection Detail
             </h3>
             <span className="text-xs text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">
@@ -221,10 +221,10 @@ export default function ForecastPage() {
                 {futureRecords.map((item, idx) => (
                   <tr key={item.month} className="hover:bg-slate-800/30 transition-colors">
                     <td className="py-3.5 px-4 font-semibold text-slate-200 flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-emerald-400" />
+                      <Calendar className="w-4 h-4 text-indigo-400" />
                       {item.month}
                     </td>
-                    <td className="py-3.5 px-4 text-right font-bold text-emerald-400">
+                    <td className="py-3.5 px-4 text-right font-bold text-indigo-400">
                       {Math.round(item.predictedOrders || 0).toLocaleString()}
                     </td>
                     <td className="py-3.5 px-4 text-right font-bold text-slate-200">
@@ -247,7 +247,7 @@ export default function ForecastPage() {
         {/* Model Accuracy Explanation Card */}
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-6 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-blue-400 font-semibold text-sm">
+            <div className="flex items-center gap-2 text-sky-400 font-semibold text-sm">
               <Info className="w-5 h-5" />
               <span>Model Accuracy Benchmark</span>
             </div>
@@ -257,14 +257,14 @@ export default function ForecastPage() {
             <p className="text-xs text-slate-300 leading-relaxed">
               Our champion <strong>Multiple Linear Regression</strong> model was selected over baseline moving averages after rigorous 6-month out-of-sample backtesting.
             </p>
-            <div className="bg-slate-950 p-4 rounded-lg border border-slate-800/80 space-y-2">
+            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800/80 space-y-2">
               <div className="flex justify-between text-xs">
                 <span className="text-slate-400">Order Volume Error Rate (MAPE):</span>
-                <span className="font-bold text-emerald-400">{kpis.orderMapePct}%</span>
+                <span className="font-bold text-indigo-400">{kpis.orderMapePct}%</span>
               </div>
               <div className="flex justify-between text-xs">
                 <span className="text-slate-400">Revenue Error Rate (MAPE):</span>
-                <span className="font-bold text-emerald-400">{kpis.revenueMapePct}%</span>
+                <span className="font-bold text-indigo-400">{kpis.revenueMapePct}%</span>
               </div>
               <div className="flex justify-between text-xs">
                 <span className="text-slate-400">Average Order Variance:</span>

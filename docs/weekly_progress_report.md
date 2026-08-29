@@ -82,4 +82,5 @@ The objective of this project is to build an end-to-end data analytics and predi
 ## 6. Official Project Links
 
 - **Public GitHub Repository:** [https://github.com/MaazzAlii/delivery-partner-sales-forecast-dashboard](https://github.com/MaazzAlii/delivery-partner-sales-forecast-dashboard)
-- **Live Vercel Production URL:** *(To be populated upon Prompt 22 completion)*
+- **Live Vercel Production URL:** [https://delivery-partner-sales-forecast-dashboard.vercel.app](https://delivery-partner-sales-forecast-dashboard.vercel.app)
+- **Internal Outreach Evidence Log:** [https://delivery-partner-sales-forecast-dashboard.vercel.app/internal/outreach](https://delivery-partner-sales-forecast-dashboard.vercel.app/internal/outreach)

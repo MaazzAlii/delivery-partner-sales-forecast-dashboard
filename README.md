@@ -1,78 +1,116 @@
-# Careem Predictive Dashboard — Antigravity Prompt Pack
-### Week 4 · AI & ML Department · Group 56 · SafeX Solutions Internship
+# Careem NOW Partner Analytics — Predictive Sales & Demand Dashboard
 
-## What this is
-This folder is a **sequenced set of prompts** you paste into Antigravity, one at a time,
-to build the Week 4 deliverable: a small forecasting dashboard for a small business
-(a restaurant partner on Careem NOW), building on your Week 3 Careem case study.
+[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python)](https://python.org)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Demo-00B14F?logo=vercel)](https://delivery-partner-sales-forecast-dashboard.vercel.app)
 
-This pack does **not** contain the finished dashboard. It contains the instructions
-that make Antigravity build it, in order, with a clean git history and a live
-Vercel deployment — plus a state file so you (or another tool, e.g. Claude Code)
-can resume mid-project if you hit a usage limit.
+> **SYNTHETIC DATA DISCLAIMER**  
+> All figures, order volumes, revenue metrics, and operational projections in this repository are **100% synthetic and simulated** for educational demonstration as part of the **SafeX Solutions Internship Program** (Week 4 Deliverable, Group 56, AI & ML Department). They do not represent real Careem NOW corporate or merchant financial data.
 
-## The business framing (so every prompt stays consistent)
-"CaremEats Partner Analytics" — a small independent restaurant that fulfills orders
-through Careem NOW. The dashboard forecasts monthly order volume and revenue so the
-owner can plan staffing, inventory, and promo timing. **All data is simulated for
-educational/portfolio purposes — it is not real Careem data.** Every screen and the
-memo must say this explicitly. Do not let Antigravity present the numbers as real.
+---
 
-## Repo layout this will produce
-```
+## 📌 Executive Summary
+
+This repository delivers an end-to-end predictive demand forecasting solution designed for independent restaurant partners operating on food delivery platforms like Careem NOW in the Rawalpindi / Islamabad region. 
+
+The project evaluates both a baseline **Simple Moving Average (SMA-6)** model and a feature-engineered **Multiple Linear Regression** champion model, which achieves a **2.75% MAPE** (~51 orders/month average variance) compared to **7.96% MAPE** (~148 orders/month variance) for the baseline model (a **65.5% error reduction**).
+
+---
+
+## 🌐 Live Production Links
+
+- **Live Web Dashboard:** [https://delivery-partner-sales-forecast-dashboard.vercel.app](https://delivery-partner-sales-forecast-dashboard.vercel.app)
+- **GitHub Repository:** [https://github.com/MaazzAlii/delivery-partner-sales-forecast-dashboard](https://github.com/MaazzAlii/delivery-partner-sales-forecast-dashboard)
+- **Internal Outreach Tracker:** [https://delivery-partner-sales-forecast-dashboard.vercel.app/internal/outreach](https://delivery-partner-sales-forecast-dashboard.vercel.app/internal/outreach) *(Process evidence route for internship grading)*
+
+---
+
+## 🚀 Key Dashboard Features
+
+1. **Overview / Home (`/`):** 4 primary KPI cards (Latest Orders, MoM Growth %, Next-Month Forecast, Model Accuracy Benchmark) + 9-month demand trend preview chart.
+2. **Sales & Demand Forecast (`/forecast`):** Interactive Recharts dual-series line chart comparing historical actuals vs predicted values across all 27 months, featuring a toggle between Order Volume and Revenue (PKR).
+3. **Data Explorer (`/data`):** Sortable, searchable table of all 27 dataset records with client-side CSV export functionality (`exportToCSV`).
+4. **Strategic Recommendations (`/recommendations`):** 3 actionable business strategies (Inventory acquisition, kitchen shift scheduling, Careem promo timing) tied directly to forecast numbers.
+5. **Methodology & About (`/about`):** Plain-language breakdown of dataset parameters, algorithm evaluations, model limitations, and project credits.
+6. **Internal Outreach Tracker (`/internal/outreach`):** Unlinked private evidence log for internship grading.
+
+---
+
+## 📂 Repository Architecture
+
+```text
 delivery-partner-sales-forecast-dashboard/
-├── .agent.md                 <- resumable state file, update after every step
-├── README.md                 <- this file
-├── prompts/                  <- this pack (00–24), read in order
-├── data/                     <- created in Prompt 02
-├── model/                    <- created in Prompts 03–07
-├── dashboard/                <- Next.js app, created in Prompt 08+, deployed to Vercel
-└── docs/                     <- memo, outreach tracker, progress report, checklist
+├── data/                                 # Raw & cleaned synthetic datasets
+│   ├── careem_partner_monthly.csv        # 24-month synthetic order & revenue data
+│   ├── careem_partner_monthly_clean.csv  # Standardized clean dataset feed
+│   ├── simulate_dataset.py               # Python generator script (seed=42)
+│   └── DISCLAIMER.md                     # Synthetic data disclaimer
+├── model/                                # Python scripts & Jupyter notebooks
+│   ├── 01_eda.py / 01_eda.ipynb          # Exploratory Data Analysis & quality checks
+│   ├── 02_baseline_moving_average.py     # SMA-3 vs SMA-6 baseline forecasting
+│   ├── 03_regression_model.py            # Multiple Linear Regression model training
+│   ├── 04_model_comparison.py            # Head-to-head backtesting & champion selection
+│   ├── 05_export_for_dashboard.py        # Static JSON exporter pipeline
+│   ├── eda_plots/                        # High-resolution PNG visualizations
+│   └── outputs/                          # Model CSV output feeds
+├── dashboard/                            # Next.js 16 App Router Web Application
+│   ├── app/                              # App Router pages (/forecast, /data, /about...)
+│   ├── components/                       # Shared React UI components (DisclaimerBanner...)
+│   ├── content/                          # Recommendation JSON content feeds
+│   ├── public/data/                      # Static JSON API feeds (forecast.json, kpis.json)
+│   └── vercel.json                       # Vercel deployment configuration
+├── docs/                                 # Formal internship documentation & evidence
+│   ├── recommendations_memo.md           # 3-page formal business memorandum
+│   ├── target_organizations.md           # Verified public target organizations research
+│   ├── outreach_drafts.md                # Personalized email/InMail outreach drafts
+│   ├── outreach_tracker.csv              # Internship outreach activity log
+│   ├── weekly_progress_report.md         # SafeX Solutions weekly progress report
+│   └── commit_history.md                 # Git commit hygiene audit log
+└── .agent.md                             # Agent state tracking file
 ```
 
-## How to run this with Antigravity
-1. Open Antigravity in an **empty root folder**, paste **Prompt 01** first (it creates
-   the meaningful-named repo, git init, GitHub remote, and folder skeleton above).
-2. Then feed prompts **02 → 24 in numeric order, one per turn**. Do not skip ahead.
-3. After Antigravity finishes each prompt: it must (a) commit that step's files
-   individually, (b) push to origin, (c) update `.agent.md`, before you send the next prompt.
-4. If Antigravity or your session hits a limit mid-pack, open `.agent.md` — it tells
-   you (or a fresh agent, or Claude Code) exactly where to resume.
-5. `prompts/00-antigravity-global-rules.md` applies to **every** prompt below —
-   paste it once at the start of the session (or keep it pinned/system-level if
-   Antigravity supports persistent rules) so the agent doesn't drift on later steps.
+---
 
-## Sequence
-| # | File | Produces |
-|---|------|----------|
-| 00 | antigravity-global-rules.md | Standing rules for the whole session |
-| 01 | repo-setup-and-git-workflow.md | Root folder, git init, GitHub remote |
-| 02 | dataset-simulation.md | 24 months synthetic order/revenue data |
-| 03 | data-cleaning-eda.md | Cleaning + EDA notebook |
-| 04 | forecasting-model-moving-average.md | Baseline model |
-| 05 | forecasting-model-regression.md | Regression model |
-| 06 | model-evaluation-selection.md | Model comparison + chosen model |
-| 07 | export-forecast-data.md | JSON/CSV feed for the dashboard |
-| 08 | dashboard-scaffold-nextjs.md | Next.js app scaffold, Vercel-ready |
-| 09 | screen-overview-home.md | Home/KPI screen |
-| 10 | screen-forecast-actual-vs-predicted.md | Forecast chart screen |
-| 11 | screen-data-explorer.md | Raw/clean data table screen |
-| 12 | screen-recommendations.md | Recommendations screen |
-| 13 | screen-methodology-about.md | Methodology/disclaimer screen |
-| 14 | screen-outreach-tracker.md | Internal outreach-log viewer (private route) |
-| 15 | responsive-styling-pass.md | Design/responsive polish |
-| 16 | business-recommendations-memo.md | Written memo (PDF) |
-| 17 | outreach-target-organizations.md | 3 real target orgs, researched not invented |
-| 18 | outreach-message-drafts.md | Draft outreach messages (human sends, not auto) |
-| 19 | outreach-tracker-log-template.md | Tracker spreadsheet template |
-| 20 | weekly-progress-report-template.md | Progress report template |
-| 21 | github-commit-push-workflow.md | Final commit hygiene pass |
-| 22 | vercel-deployment.md | Live Vercel link |
-| 23 | portfolio-walkthrough-video.md | Video script + recording checklist |
-| 24 | final-qa-submission-checklist.md | Pre-submission QA |
+## 🛠️ Local Development & Quick Start
 
-## Group 56 coordination
-Before you paste Prompt 02, message Ahmed Mujtaba (Group Leader) with your exact
-scope (restaurant order-volume forecasting) so it's logged against duplication by
-teammates. Submit the anonymous Group Leader feedback form by Friday — that's on
-you, no prompt automates it.
+### Python Data & Modeling Pipeline
+
+```bash
+# 1. Generate synthetic dataset
+python data/simulate_dataset.py
+
+# 2. Run EDA & generate charts
+python model/01_eda.py
+
+# 3. Train & backtest baseline SMA model
+python model/02_baseline_moving_average.py
+
+# 4. Train & backtest Linear Regression model
+python model/03_regression_model.py
+
+# 5. Evaluate models & select champion
+python model/04_model_comparison.py
+
+# 6. Export static JSON feed to dashboard
+python model/05_export_for_dashboard.py
+```
+
+### Next.js Dashboard Local Server
+
+```bash
+cd dashboard
+npm install
+npm run dev
+# Open http://localhost:3000 in browser
+```
+
+---
+
+## 👨‍💻 Project Credits & Internship Context
+
+- **Intern Name:** Maaz Ali
+- **Program:** SafeX Solutions Internship Program (Week 4 Deliverable)
+- **Track:** AI & Machine Learning (AI/ML)
+- **Group:** Group 56
+- **Group Leader:** Ahmed Mujtaba
